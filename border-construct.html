@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #block {
+            width: 350px;
+            height: 250px;
+            background-color: rgb(153, 0, 255);
+            border-radius: 50% 50% 50% 50%;
+        }
+        .input-block {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="block">
+
+    </div>
+    <div class="input-block">
+        <div>
+            <p id="tlt">50%</p>
+            <input type="range" value="50" oninput="fun1()" id="tl">
+        </div>
+        <div>
+            <p id="trt">50%</p>
+            <input type="range" value="50" oninput="fun1()" id="tr">
+        </div>
+    </div>
+    <div class="input-block">
+        <div>
+            <p id="blt">50%</p>
+            <input type="range" value="50" oninput="fun1()" id="bl">
+        </div>
+        <div>
+            <p id="brt">50%</p>
+            <input type="range" value="50" oninput="fun1()" id="br">
+        </div>
+    </div>
+    <script>
+        
+
+        function fun1() {
+            var tl = document.getElementById('tl').value;
+            var tr = document.getElementById('tr').value;
+            var bl = document.getElementById('bl').value;
+            var br = document.getElementById('br').value;
+            var tit = document.getElementById('tlt')
+            var trt = document.getElementById('trt')
+            var blt = document.getElementById('blt')
+            var brt = document.getElementById('brt')
+
+            var block=document.getElementById('block');
+
+            tlt.innerHTML=tl + '%';
+            trt.innerHTML=tr + '%';
+            blt.innerHTML=bl + '%';
+            brt.innerHTML=br + '%';
+
+            block.style.borderRadius=tl+'% '+tr+'% '+bl+'% '+br+'% ';
+
+        }
+    </script>
+</body>
+
+</html>
